@@ -1,0 +1,14 @@
+@import '../../styles-global/variables.scss';
+
+.list {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  align-items: center;
+
+  @media (min-width: $sm) {
+    flex-direction: row;
+    justify-content: center;
+    align-items: stretch;
+  }
+}

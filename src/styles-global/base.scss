@@ -1,0 +1,78 @@
+*,
+::after,
+::before {
+  box-sizing: border-box;
+}
+
+body,
+html {
+  padding: 0;
+  margin: 0;
+}
+
+html {
+  height: 100%;
+}
+
+body {
+  font-family: $main-font;
+  font-style: normal;
+  font-weight: $medium-font-weight;
+  font-size: $main-font-size;
+  line-height: $main-line-height;
+  background-color: $bg-color;
+  color: white;
+}
+
+#root {
+  display: flex;
+  flex-direction: column;
+  padding: 0;
+  min-height: 100vh;
+  background: $bg-image-gradient;
+}
+
+img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
+svg {
+  fill: currentColor; /* stylelint-disable-line */
+}
+
+button[type='submit'] {
+  cursor: pointer;
+
+  &:disabled {
+    opacity: 0.5;
+  }
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+  white-space: nowrap;
+  clip-path: inset(100%);
+  clip: rect(0 0 0 0);
+  overflow: hidden;
+}
+
+@keyframes anim {
+  0% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-20px);
+  }
+
+  100% {
+    transform: translateY(0);
+  }
+}

@@ -1,0 +1,13 @@
+@import '../../styles-global/variables.scss';
+
+.order {
+  margin: 0;
+
+  @media (min-width: $sm) {
+    padding: 3vw 5vw;
+  }
+
+  & > div {
+    border: none;
+  }
+}

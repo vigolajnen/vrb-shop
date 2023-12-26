@@ -1,0 +1,106 @@
+@import '../../styles-global/variables.scss';
+
+.label {
+  display: block;
+  margin-bottom: 10px;
+  color: #344054;
+  font-weight: 700;
+}
+
+.control {
+  font-family: $main-font;
+  padding: 12px 16px;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
+  color: #667085;
+  box-shadow: 0 1px 2px rgba(16, 24, 40, 5%);
+  border-radius: 8px;
+}
+
+.stepper {
+  position: relative;
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 1rem;
+    right: 1rem;
+    transform: translateY(-50%);
+    width: calc(100% - 2rem);
+    height: 1px;
+    background-color: #dee2e6;
+  }
+}
+
+.stepperItem {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0.25rem;
+  background-color: $white-color;
+
+  @media (min-width: $sm) {
+    padding: 1rem;
+  }
+
+  & span {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: #dee2e6;
+    color: black;
+  }
+}
+
+.active {
+  background-color: $white-color;
+  & span {
+    background: $bg-gradient;
+    color: $white-color;
+  }
+}
+
+.labelCheck {
+  font-size: 1rem;
+}
+
+.link {
+  color: $secondary-color;
+  text-decoration: none;
+
+  &:hover {
+    opacity: 0.75;
+  }
+}
+
+.buttonNext {
+  font-size: 1rem;
+  font-weight: $bold-font-weight;
+  background: $bg-gradient;
+  color: $white-color;
+  border: none;
+  outline: none;
+  border-radius: 30px;
+
+  &:focus,
+  &:hover {
+    background: $bg-product;
+  }
+
+  &:disabled {
+    opacity: 0.5;
+    cursor: default;
+  }
+}

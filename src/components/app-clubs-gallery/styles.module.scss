@@ -1,0 +1,80 @@
+@import '../../styles-global/variables.scss';
+
+.gallery {
+  margin-top: 5rem;
+  margin-bottom: 2.5rem;
+
+  @media (min-width: $md) {
+    margin-top: 5rem;
+    margin-bottom: 5rem;
+  }
+}
+
+.title {
+  padding: 0 1rem;
+  font-size: 35px;
+  font-weight: $bold-font-weight;
+  text-transform: uppercase;
+  text-align: center;
+
+  @media (min-width: $sm) {
+    font-size: 57px;
+  }
+
+  @media (min-width: $md) {
+    padding-left: 160px;
+    font-size: 60px;
+    text-align: left;
+  }
+}
+
+.text {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  padding: 1rem 0;
+  width: calc(100% - 30px);
+  max-width: 440px;
+  font-size: 1rem;
+  font-weight: $bold-font-weight;
+  line-height: normal;
+  text-transform: uppercase;
+
+  @media (min-width: $md) {
+    font-size: 20px;
+  }
+  & span {
+    color: $secondary-color;
+  }
+
+  & small {
+    font-size: small;
+    text-transform: lowercase;
+  }
+}
+
+.container {
+  padding-left: 0;
+  padding-right: 0;
+  max-width: 1440px;
+  margin: 0 auto;
+  overflow: hidden;
+}
+
+.item {
+  & .text {
+    padding: 0 1rem;
+
+    @media (min-width: $md) {
+      padding: 1rem 0;
+    }
+  }
+  @media (min-width: $md) {
+    &:nth-child(2n) {
+      padding-left: 160px;
+    }
+
+    &:not(:nth-child(2n)) .text {
+      margin-left: 160px;
+    }
+  }
+}

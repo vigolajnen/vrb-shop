@@ -1,0 +1,192 @@
+@import '../../styles-global/variables.scss';
+
+.tariff {
+  z-index: 3;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  padding: 2px;
+  max-width: 395px;
+  height: 100%;
+  background: $bg-product;
+  border-radius: 6px;
+  transition: $transition-base;
+  color: $white-color;
+  font-size: 16px;
+
+  @media (min-width: $sm) {
+    max-width: 320px;
+    width: 450px;
+    font-size: 14px;
+  }
+
+  @media (min-width: $xl) {
+    width: auto;
+  }
+
+  @media (min-width: $xxl) {
+    max-width: 395px;
+    font-size: 16px;
+  }
+
+  &:hover {
+    background: $bg-gradient-radial;
+    transition: $transition-base;
+    animation: rotate-position 6s infinite linear;
+
+    @media (min-width: $md) {
+      transform: scale(1.02);
+    }
+
+    & .button {
+      & span {
+        background: $bg-gradient;
+      }
+    }
+  }
+}
+
+.active {
+  background: $bg-gradient;
+
+  &:hover {
+    background: $bg-gradient-radial;
+  }
+}
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  height: 100%;
+  padding: 30px 20px;
+  border-radius: 6px;
+  background-color: $bg-product;
+
+  @media (min-width: $xs) {
+    padding: 24px 20px;
+  }
+
+  @media (min-width: $xxl) {
+    gap: 20px;
+  }
+
+  @media (min-width: $xxlg) {
+    padding: 30px;
+  }
+}
+
+.title {
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.price {
+  text-align: center;
+  position: relative;
+
+  font-weight: $bold-font-weight;
+  font-size: 38px;
+  letter-spacing: 0;
+  line-height: normal;
+
+  @media (min-width: $xs) {
+    font-size: 54px;
+  }
+  @media (min-width: $md) {
+    font-size: 47px;
+  }
+
+  & small {
+    margin-left: 0.5rem;
+    font-weight: $bold-font-weight;
+    font-size: 13px;
+    line-height: 19px;
+    color: #bebed1;
+
+    @media (min-width: $sm) {
+      line-height: 22px;
+    }
+
+    @media (min-width: $md) {
+      line-height: 24px;
+    }
+  }
+}
+
+.link {
+  z-index: 0;
+  position: relative;
+  display: inline-block;
+
+  padding: 1rem;
+  margin: 2%;
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 24px;
+  text-align: center;
+  background: $bg-gradient;
+  color: $white-color;
+  transition: $transition-base;
+  border-radius: $border-radius;
+  text-decoration: none;
+  text-transform: lowercase;
+  outline: none;
+  cursor: pointer;
+
+  &::before {
+    content: '';
+    z-index: -1;
+    position: absolute;
+    top: 2px;
+    left: 2px;
+    width: calc(100% - 4px);
+    height: calc(100% - 4px);
+    border-radius: $border-radius;
+    background: $bg-product;
+    background: transparent;
+  }
+
+  &:focus,
+  &:active,
+  &:hover {
+    transition: $transition-base;
+
+    &::before {
+      background: $bg-product;
+    }
+  }
+
+  &:disabled {
+    opacity: 0.5;
+  }
+}
+
+.linkOutline {
+  & span {
+    display: flex;
+    padding: 15px 76px;
+    border-radius: $border-radius;
+    background: $bg-product;
+  }
+
+  &:focus,
+  &:active,
+  &:hover {
+    transition: $transition-base;
+
+    & span {
+      background: $bg-gradient;
+    }
+  }
+}
+
+@keyframes rotate-position {
+  from {
+    background-position: -1000px;
+  }
+
+  to {
+    background-position: 0;
+  }
+}

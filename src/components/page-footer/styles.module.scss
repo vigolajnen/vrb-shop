@@ -1,0 +1,17 @@
+@import '../../styles-global/variables.scss';
+
+.footer {
+  position: relative;
+  margin-top: auto;
+  background-color: $dark-color;
+  opacity: 0.75;
+}
+
+.link {
+  color: $white-color;
+
+  &:focus,
+  &:hover {
+    color: $secondary-color;
+  }
+}

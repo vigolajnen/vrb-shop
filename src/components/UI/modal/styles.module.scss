@@ -1,0 +1,45 @@
+@import '../../../styles-global/variables.scss';
+
+.body {
+  color: black;
+}
+
+.header {
+  border: none;
+  text-align: center;
+}
+
+.close {
+  position: absolute;
+  right: 0.5rem;
+  top: 0.5rem;
+
+  @media (min-width: $sm) {
+    right: 0;
+    top: 0;
+  }
+}
+
+.title {
+  margin: 0 auto;
+  padding: 0 0.5rem;
+  font-family: $main-font-bold;
+  font-weight: $bold-font-weight;
+  font-style: normal;
+  font-size: 23px;
+  line-height: 38px;
+  text-align: center;
+  letter-spacing: -0.02em;
+  color: #101828;
+  text-transform: uppercase;
+
+  @media (min-width: $xs) {
+    font-size: 28px;
+    line-height: 38px;
+  }
+
+  @media (min-width: $sm) {
+    font-size: 36px;
+    line-height: 44px;
+  }
+}

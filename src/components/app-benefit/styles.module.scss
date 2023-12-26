@@ -1,0 +1,27 @@
+@import '../../styles-global/variables.scss';
+
+.benefit {
+  margin-top: 2.5rem;
+  margin-bottom: 2.5rem;
+
+  @media (min-width: $md) {
+    margin-top: 5rem;
+    margin-bottom: 5rem;
+  }
+}
+
+.container {
+  z-index: 1;
+  position: relative;
+  width: 100%;
+  max-width: 1110px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 42px;
+
+  @media (min-width: $md) {
+    flex-direction: row;
+    padding-top: 50px;
+  }
+}

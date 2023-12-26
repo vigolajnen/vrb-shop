@@ -1,0 +1,16 @@
+@import '../../styles-global/variables.scss';
+
+.wrapper {
+  opacity: 0.75;
+  font-weight: $medium-font-weight;
+  line-height: normal;
+  font-size: inherit;
+  display: flex;
+  flex-direction: column;
+
+  & ul {
+    padding-left: 20px;
+    list-style: disc;
+    font-weight: $medium-font-weight;
+  }
+}

@@ -1,0 +1,42 @@
+@import '../../styles-global/variables.scss';
+
+.header {
+  position: relative;
+  margin-bottom: auto;
+  background-color: $dark-color;
+  color: $white-color;
+  transition: 0.3s;
+}
+
+.button {
+  background: $bg-gradient;
+  border-radius: 20px !important;
+}
+
+.menuItem {
+  min-width: 200px;
+
+  & a {
+    display: block;
+    padding: 0.5rem 0.75rem !important;
+    width: 100%;
+    font-size: 1rem;
+    color: $dark-color;
+    text-decoration: none;
+    box-sizing: border-box;
+
+    &:focus,
+    &:hover {
+      opacity: 0.75;
+    }
+  }
+}
+
+.logo {
+  width: 120px;
+  height: auto;
+
+  @media (min-width: $sm) {
+    width: 160px;
+  }
+}

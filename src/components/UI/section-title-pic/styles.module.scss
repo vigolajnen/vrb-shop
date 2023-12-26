@@ -1,0 +1,16 @@
+@import '../../../styles-global/variables.scss';
+
+.titlePic {
+  width: 170px;
+  height: auto;
+
+  @media (min-width: $xs) {
+    width: 300px;
+  }
+
+  @media (min-width: $md) {
+    width: 330px;
+    height: 200px;
+    max-width: 30%;
+  }
+}
