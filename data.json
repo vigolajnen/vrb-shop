@@ -25,7 +25,7 @@
               "product_id": "415406",
               "product_price": "1950",
               "product_name": "Первоначальный платеж",
-              "product_type": "subscription_recurrent"
+              "product_type": "first_pay"
             }
           ]
         },
@@ -36,22 +36,22 @@
           "isPool": true,
           "products": [
             {
-              "product_id": "414890",
+              "product_id": "4148902",
               "product_price": "2500",
               "product_name": "1 месяц Утро Подписка Шушары",
               "product_type": "morning"
             },
             {
-              "product_id": "414889",
+              "product_id": "4148839",
               "product_price": "2900",
               "product_name": "1 месяц Подписка Шушары",
               "product_type": "full"
             },
             {
-              "product_id": "415406",
+              "product_id": "4154406",
               "product_price": "1950",
               "product_name": "Первоначальный платеж",
-              "product_type": "subscription_recurrent"
+              "product_type": "first_pay"
             }
           ]
         },
@@ -77,7 +77,7 @@
               "product_id": "415406",
               "product_price": "1950",
               "product_name": "Первоначальный платеж",
-              "product_type": "subscription_recurrent"
+              "product_type": "first_pay"
             }
           ]
         },
@@ -103,7 +103,7 @@
               "product_id": "415406",
               "product_price": "1950",
               "product_name": "Первоначальный платеж",
-              "product_type": "subscription_recurrent"
+              "product_type": "first_pay"
             }
           ]
         },
@@ -129,7 +129,7 @@
               "product_id": "415406",
               "product_price": "1950",
               "product_name": "Первоначальный платеж",
-              "product_type": "subscription_recurrent"
+              "product_type": "first_pay"
             }
           ]
         }
@@ -166,7 +166,7 @@
               "product_id": "415406",
               "product_price": "1950",
               "product_name": "Первоначальный платеж",
-              "product_type": "subscription_recurrent"
+              "product_type": "first_pay"
             }
           ]
         },
@@ -198,7 +198,7 @@
               "product_id": "415405",
               "product_price": "1950",
               "product_name": "Первоначальный платеж",
-              "product_type": "subscription_recurrent"
+              "product_type": "first_pay"
             }
           ]
         },
@@ -230,7 +230,7 @@
               "product_id": "415408",
               "product_price": "1950",
               "product_name": "Первоначальный платеж",
-              "product_type": "subscription_recurrent"
+              "product_type": "first_pay"
             }
           ]
         },
@@ -256,7 +256,7 @@
               "product_id": "415407",
               "product_price": "1950",
               "product_name": "Первоначальный платеж",
-              "product_type": "subscription_recurrent"
+              "product_type": "first_pay"
             }
           ]
         }
@@ -312,7 +312,7 @@
               "product_id": "415406",
               "product_price": "1950",
               "product_name": "Первоначальный платеж",
-              "product_type": "subscription_recurrent"
+              "product_type": "first_pay"
             }
           ]
         }
