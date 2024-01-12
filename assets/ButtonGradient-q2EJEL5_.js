@@ -1,0 +1,1 @@
+import{j as a}from"./react-dOK_llRH.js";import{c as o}from"./classnames-G66vBsBY.js";const i="_button_15ebj_1",s={button:i},d=({children:e,as:t="button",onClick:u,outline:r,style:n,...b})=>a.jsx(t,{onClick:u,className:t==="button"?o("btnReset rounded-pill",s.button,n):o("linkReset rounded-pill",s.button,n),"data-outline":r,...b,children:e});export{d as B};
