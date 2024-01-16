@@ -1,6 +1,8 @@
 @import '../../styles-global/variables.scss';
 
 .benefit {
+  z-index: 1;
+  position: relative;
   margin-top: 2.5rem;
   margin-bottom: 2.5rem;
 
@@ -14,7 +16,7 @@
   z-index: 1;
   position: relative;
   width: 100%;
-  max-width: 1110px;
+  max-width: 1280px;
   display: flex;
   flex-direction: column;
   align-items: center;

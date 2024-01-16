@@ -8,6 +8,8 @@ import cn from 'classnames';
 import { useModal } from '../../../hooks/useModal';
 
 import styles from './styles.module.scss';
+import { ErrorBoundary } from 'react-error-boundary';
+import ErrorsFallback from '../../errors-fallback/ErrorsFallback';
 
 interface IAppModalProps {
   onClose: () => void;
@@ -49,8 +51,9 @@ const AppModal: FC<IAppModalProps> = ({ onClose, children, title, style }) => {
             <Modal.Title className={styles.title}>{title}</Modal.Title>
             <CloseButton onClick={onClose} className={styles.close} />
           </Modal.Header>
-
-          <Modal.Body onClick={handelClick}>{children}</Modal.Body>
+          <ErrorBoundary FallbackComponent={ErrorsFallback}>
+            <Modal.Body onClick={handelClick}>{children}</Modal.Body>
+          </ErrorBoundary>
         </Modal.Dialog>
       </Modal>,
       modalRoot!,

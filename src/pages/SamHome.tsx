@@ -38,16 +38,18 @@ export default function SamHome() {
           }
         >
           <AppPromo />
+
           <AppTariffs />
-          <AppBenefit />
+          <AppProfit />
         </Suspense>
         <AppClubsGallery
           dataPool={dataPool}
           dataGym={dataGym}
           dataSpa={dataSpa}
           dataGroup={dataGroup}
+          dataMain={[]}
         />
-        <AppProfit />
+        <AppBenefit />
         <AppFaq />
       </CityContext.Provider>
     </>

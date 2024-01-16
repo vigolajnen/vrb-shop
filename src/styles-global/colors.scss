@@ -1,0 +1,116 @@
+// colors
+$white: #fff;
+$black: #000;
+$black-950: rgba(0, 0, 0, 0.25);
+$black-50: rgba(0, 0, 0, 0.1);
+$black-200: rgba(0, 0, 0, 0.3);
+$bunker: #18181b;
+$seagull: #6ddcff;
+$medium-purple: #7f60f9;
+$lemon-chiffon: #fff9c2;
+$paris-daisy: #fff06b;
+$curious-blue: #1c8ac8;
+$curious-blue-500: #1c8ac833;
+$porcelain: #f2f5f7;
+$woodsmoke: #171818;
+$woodsmoke-950: #171818e6;
+$cornflower: #a0d8f8;
+$resolution-blue: #0f1d78;
+$madison: rgba(9, 39, 98, 0);
+$ebony-950: #020620;
+$deep-cove-950: #040a34;
+$abbey-700: #494c4f30;
+
+// theme
+$themeDark: (
+  bgTabs: $bunker,
+  bgTabActive: linear-gradient(98.24deg, $seagull 0%, $medium-purple 100%),
+  colorTabActive: $white,
+  bgClubsServices: transparent,
+  borderSectionListIconText: $seagull,
+  titleSectionListIconText: $seagull,
+  textSectionListIconText: $white,
+  bgGallery: transparent,
+  colorGallery: $white,
+  bgFaq: transparent,
+  colorFaq: $white,
+  bgFooter: $black,
+  bgFooterOpacity: 0.75,
+  colorFooter: $white,
+  colorFooterLink: $white,
+  colorFooterLinkHover: $seagull,
+  bgTariffs: transparent,
+  bgTariff: $bunker,
+  bgTariffActive: linear-gradient(98.24deg, $seagull 0%, $medium-purple 100%),
+  bgTariffActiveHover:
+    radial-gradient(50% 50% at 50% 50%, $resolution-blue 76.56%, $madison 100%),
+  textTariff: $white,
+  bgTariffHeader: transparent,
+  colorTariffHeader: $medium-purple,
+  textTariffHeader: $white,
+  borderTariffHeader: $seagull,
+  textTariffBtn: $white,
+  borderRadiusTariff: 6px,
+  bgGradient: linear-gradient(98.24deg, $seagull 0%, $medium-purple 100%),
+  bgGradientRadial:
+    radial-gradient(50% 50% at 50% 50%, $resolution-blue 76.56%, $madison 100%),
+);
+
+$themeLight: (
+  bgTabs: transparent,
+  bgTabActive: $lemon-chiffon,
+  colorTabActive: $curious-blue,
+  bgClubsServices: $porcelain,
+  borderSectionListIconText: $curious-blue,
+  titleSectionListIconText: $curious-blue,
+  textSectionListIconText: $woodsmoke,
+  bgGallery: $porcelain,
+  colorGallery: $woodsmoke,
+  bgFaq: $porcelain,
+  colorFaq: $woodsmoke,
+  bgFooter: $curious-blue,
+  bgFooterOpacity: 1,
+  colorFooter: $white,
+  colorFooterLink: $white,
+  colorFooterLinkHover: $lemon-chiffon,
+  bgTariffs: $curious-blue,
+  bgTariff: $white,
+  bgTariffActive: $cornflower,
+  bgTariffActiveHover:
+    radial-gradient(50% 50% at 50% 50%, $cornflower 76.56%, $lemon-chiffon 100%),
+  textTariff: $woodsmoke-950,
+  bgTariffHeader: $lemon-chiffon,
+  colorTariffHeader: $curious-blue,
+  textTariffHeader: $curious-blue,
+  borderTariffHeader: $curious-blue-500,
+  textTariffBtn: $curious-blue,
+  borderRadiusTariff: 45px,
+  bgGradient: $curious-blue,
+  bgGradientRadial:
+    radial-gradient(50% 50% at 50% 50%, $cornflower 76.56%, $lemon-chiffon 100%),
+);
+
+$theme: $themeDark;
+
+// provide a simple way to set colors from theme-map
+@function themeColor($key) {
+  $val: map-get($theme, $key);
+  @return $val;
+}
+
+$bg-image-gradient: linear-gradient(0deg, $ebony-950 0%, $deep-cove-950 100%);
+$bg-gradient-revers: linear-gradient(
+  98.24deg,
+  $medium-purple 0%,
+  $seagull 100%
+);
+$bg-gradient-radial: radial-gradient(
+  50% 50% at 50% 50%,
+  $resolution-blue 76.56%,
+  $madison 100%
+);
+
+$box-shadow: 8px 8px 16px $abbey-700, -8px -8px 10px $white;
+$box-shadow-dark: 4px 4px 8px $black-950;
+$box-shadow-dark-inner: inset 0 -3em 1em $black-50, 0 0 0 2px $white,
+  0.3em 0.3em 1em $black-200;

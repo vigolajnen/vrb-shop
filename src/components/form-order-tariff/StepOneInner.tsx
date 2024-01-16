@@ -1,4 +1,4 @@
-import { FC } from 'react';
+import { FC, useEffect } from 'react';
 import Form from 'react-bootstrap/Form';
 import { useFormContext } from 'react-hook-form';
 import ReactInputMask from 'react-input-mask';
@@ -11,8 +11,14 @@ import styles from './styles.module.scss';
 const StepOneInner: FC<any> = () => {
   const {
     register,
+    setFocus,
     formState: { errors },
   } = useFormContext();
+
+  useEffect(() => {
+    setFocus('firstName');
+  }, [setFocus]);
+
   return (
     <>
       <Form.Group className="mb-3">
@@ -21,13 +27,20 @@ const StepOneInner: FC<any> = () => {
           type="text"
           id="first_name"
           placeholder="Имя"
-          className={styles.control}
+          className={
+            errors.firstName
+              ? cn(styles.control, 'form-control is-invalid')
+              : cn(styles.control, 'form-control')
+          }
           {...register('firstName', {
             required: true,
+            minLength: 2,
           })}
         />
         {errors.firstName && (
-          <Form.Text className="text-danger">error firstName</Form.Text>
+          <Form.Text className="text-danger">
+            Пожалуйста, введите ваше имя
+          </Form.Text>
         )}
       </Form.Group>
       <Form.Group className="mb-3">
@@ -35,7 +48,11 @@ const StepOneInner: FC<any> = () => {
         <ReactInputMask
           id="phone"
           type="tel"
-          className={cn(styles.control, 'form-control')}
+          className={
+            errors.phone
+              ? cn(styles.control, 'form-control is-invalid')
+              : cn(styles.control, 'form-control')
+          }
           mask="+7(999) 999-99-99"
           alwaysShowMask={true}
           {...register('phone', {
@@ -45,7 +62,9 @@ const StepOneInner: FC<any> = () => {
           })}
         />
         {errors.phone && (
-          <Form.Text className="text-danger">error phone</Form.Text>
+          <Form.Text className="text-danger">
+            Пожалуйста, введите ваш телефон
+          </Form.Text>
         )}
       </Form.Group>
     </>

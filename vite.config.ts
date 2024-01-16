@@ -1,6 +1,7 @@
 import react from '@vitejs/plugin-react';
 import viteEnvCompatible from 'vite-plugin-env-compatible';
 import { imagetools } from 'vite-imagetools';
+import { ViteImageOptimizer } from 'vite-plugin-image-optimizer';
 
 import { defineConfig } from 'vite';
 import svgr from 'vite-plugin-svgr';
@@ -8,7 +9,7 @@ import svgr from 'vite-plugin-svgr';
 // https://vitejs.dev/config/
 export default defineConfig(() => {
   return {
-    base: '/vrb-shop/',
+    // base: '/vrb-shop/',
     envPrefix: 'REACT_APP_',
     server: {
       host: true,
@@ -23,6 +24,17 @@ export default defineConfig(() => {
           svgoConfig: {
             floatPrecision: 2,
           },
+        },
+      }),
+      ViteImageOptimizer({
+        jpg: {
+          quality: 80,
+        },
+        png: {
+          quality: 80,
+        },
+        webp: {
+          lossless: false,
         },
       }),
     ],

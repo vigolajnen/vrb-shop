@@ -1,0 +1,22 @@
+@import '../../styles-global/variables.scss';
+
+.scroll {
+  position: absolute;
+  top: 10px;
+  right: 0;
+  width: 20px;
+  height: 20px;
+  fill: none;
+  stroke-width: 1px;
+  stroke: $black;
+
+  @media (min-width: $xl) {
+    overflow: hidden;
+  }
+}
+
+.slide {
+  display: flex;
+  overflow: hidden;
+  border-radius: 30px;
+}

@@ -25,14 +25,15 @@ export default function IjkHome() {
         />
         <AppPromo />
         <AppTariffs />
-        <AppBenefit />
+        <AppProfit />
         <AppClubsGallery
           dataPool={dataPool}
           dataGym={dataGym}
           dataSpa={dataSpa}
           dataGroup={dataGroup}
+          dataMain={[]}
         />
-        <AppProfit />
+        <AppBenefit />
         <AppFaq />
       </CityContext.Provider>
     </>

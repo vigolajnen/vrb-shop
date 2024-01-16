@@ -72,7 +72,11 @@ export default function AppRoutes() {
             element={
               <Suspense
                 fallback={
-                  <Spinner animation="border" role="status">
+                  <Spinner
+                    animation="border"
+                    role="status"
+                    className="d-flex justify-content-center"
+                  >
                     <span className="visually-hidden">Loading...</span>
                   </Spinner>
                 }
@@ -90,7 +94,11 @@ export default function AppRoutes() {
             element={
               <Suspense
                 fallback={
-                  <Spinner animation="border" role="status">
+                  <Spinner
+                    animation="border"
+                    role="status"
+                    className="d-flex justify-content-center"
+                  >
                     <span className="visually-hidden">Loading...</span>
                   </Spinner>
                 }
@@ -109,7 +117,11 @@ export default function AppRoutes() {
             element={
               <Suspense
                 fallback={
-                  <Spinner animation="border" role="status">
+                  <Spinner
+                    animation="border"
+                    role="status"
+                    className="d-flex justify-content-center"
+                  >
                     <span className="visually-hidden">Loading...</span>
                   </Spinner>
                 }
@@ -127,7 +139,11 @@ export default function AppRoutes() {
             element={
               <Suspense
                 fallback={
-                  <Spinner animation="border" role="status">
+                  <Spinner
+                    animation="border"
+                    role="status"
+                    className="d-flex justify-content-center"
+                  >
                     <span className="visually-hidden">Loading...</span>
                   </Spinner>
                 }
@@ -145,7 +161,11 @@ export default function AppRoutes() {
             element={
               <Suspense
                 fallback={
-                  <Spinner animation="border" role="status">
+                  <Spinner
+                    animation="border"
+                    role="status"
+                    className="d-flex justify-content-center"
+                  >
                     <span className="visually-hidden">Loading...</span>
                   </Spinner>
                 }
@@ -163,7 +183,11 @@ export default function AppRoutes() {
             element={
               <Suspense
                 fallback={
-                  <Spinner animation="border" role="status">
+                  <Spinner
+                    animation="border"
+                    role="status"
+                    className="d-flex justify-content-center"
+                  >
                     <span className="visually-hidden">Loading...</span>
                   </Spinner>
                 }
@@ -181,7 +205,11 @@ export default function AppRoutes() {
             element={
               <Suspense
                 fallback={
-                  <Spinner animation="border" role="status">
+                  <Spinner
+                    animation="border"
+                    role="status"
+                    className="d-flex justify-content-center"
+                  >
                     <span className="visually-hidden">Loading...</span>
                   </Spinner>
                 }
@@ -199,7 +227,11 @@ export default function AppRoutes() {
             element={
               <Suspense
                 fallback={
-                  <Spinner animation="border" role="status">
+                  <Spinner
+                    animation="border"
+                    role="status"
+                    className="d-flex justify-content-center"
+                  >
                     <span className="visually-hidden">Loading...</span>
                   </Spinner>
                 }
@@ -217,7 +249,11 @@ export default function AppRoutes() {
             element={
               <Suspense
                 fallback={
-                  <Spinner animation="border" role="status">
+                  <Spinner
+                    animation="border"
+                    role="status"
+                    className="d-flex justify-content-center"
+                  >
                     <span className="visually-hidden">Loading...</span>
                   </Spinner>
                 }
@@ -235,7 +271,11 @@ export default function AppRoutes() {
             element={
               <Suspense
                 fallback={
-                  <Spinner animation="border" role="status">
+                  <Spinner
+                    animation="border"
+                    role="status"
+                    className="d-flex justify-content-center"
+                  >
                     <span className="visually-hidden">Loading...</span>
                   </Spinner>
                 }
@@ -253,7 +293,11 @@ export default function AppRoutes() {
             element={
               <Suspense
                 fallback={
-                  <Spinner animation="border" role="status">
+                  <Spinner
+                    animation="border"
+                    role="status"
+                    className="d-flex justify-content-center"
+                  >
                     <span className="visually-hidden">Loading...</span>
                   </Spinner>
                 }
@@ -271,7 +315,11 @@ export default function AppRoutes() {
             element={
               <Suspense
                 fallback={
-                  <Spinner animation="border" role="status">
+                  <Spinner
+                    animation="border"
+                    role="status"
+                    className="d-flex justify-content-center"
+                  >
                     <span className="visually-hidden">Loading...</span>
                   </Spinner>
                 }
@@ -289,7 +337,11 @@ export default function AppRoutes() {
             element={
               <Suspense
                 fallback={
-                  <Spinner animation="border" role="status">
+                  <Spinner
+                    animation="border"
+                    role="status"
+                    className="d-flex justify-content-center"
+                  >
                     <span className="visually-hidden">Loading...</span>
                   </Spinner>
                 }

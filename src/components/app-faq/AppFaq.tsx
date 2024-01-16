@@ -1,11 +1,19 @@
-import { FC } from 'react';
+import { FC, useContext } from 'react';
 import cn from 'classnames';
 import Container from 'react-bootstrap/esm/Container';
 import Accordion from 'react-bootstrap/Accordion';
 
+import { useTypedSelector } from '../../hooks/useTypedSelector';
+import { getCityPriceList } from '../../utils/tariffs';
+
 import styles from './styles.module.scss';
+import { ThemeContext } from '../../context/ThemeContext';
 
 const AppFaq: FC = () => {
+  const theme = useContext(ThemeContext);
+  const { tariffPriceCity, firstPayPrice, endDateSale } = useTypedSelector(
+    state => state.price,
+  );
   const data = [
     {
       title: 'В какое время можно посещать клуб?',
@@ -31,18 +39,18 @@ const AppFaq: FC = () => {
       title: 'Какие преимущества оплаты тарифа с первоначальным платежом?',
       text: (
         <>
-          {/* <p>
+          <p>
             Обязательным условием оплаты тарифа Подписка является оплата
-            первоначального платежа в размере {CONTRIBUTION} р.
+            первоначального платежа в размере {firstPayPrice} р.
           </p>
-          {Boolean(products) && (
+          {Boolean(tariffPriceCity) && (
             <p>
               При выборе вида оплаты Подписка, в первый месяц оплачивается тариф
-              на выбор {getCityPriceList(products)}, и первоначальный платеж
-              ВСЕГО {CONTRIBUTION}р вместо 3900р. Скидка действует до{' '}
-              {END_DATE_SALE} 2023г.
+              на выбор {getCityPriceList(tariffPriceCity)}, и первоначальный
+              платеж ВСЕГО {firstPayPrice}р вместо 3900р. Скидка действует до{' '}
+              {endDateSale} 2024г.
             </p>
-          )} */}
+          )}
 
           <p>
             Со второго месяца автоматически списывается ежемесячная оплата в
@@ -98,9 +106,13 @@ const AppFaq: FC = () => {
             ))}
           </Accordion>
         </Container>
-        <div className={styles.bg} tabIndex={-1}>
-          <div className={styles.bg1}></div>
-        </div>
+        {theme !== 'light-theme' && (
+          <>
+            <div className={styles.bg} tabIndex={-1}>
+              <div className={styles.bg1}></div>
+            </div>
+          </>
+        )}
       </div>
     </section>
   );

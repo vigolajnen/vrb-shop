@@ -55,7 +55,7 @@ const PageFooter: FC = () => {
               </Col>
             ))}
             <Col className="">
-              <div>© 2007 - 2023.</div>
+              <div>© 2007 - 2024.</div>
               <div>Все права защищены.</div>
             </Col>
           </Row>

@@ -1,4 +1,4 @@
-import { FC, useEffect, useRef, useState } from 'react';
+import { FC, useContext, useEffect, useRef, useState } from 'react';
 import cn from 'classnames';
 import Container from 'react-bootstrap/Container';
 
@@ -6,8 +6,10 @@ import Logo from '../logo/Logo';
 import PageHeaderCity from './PageHeaderCity';
 
 import styles from './styles.module.scss';
+import { ThemeContext } from '../../context/ThemeContext';
 
 const PageHeader: FC = () => {
+  const theme = useContext(ThemeContext);
   const headerRef = useRef<HTMLDivElement | null>(null);
   const [sticky, setSticky] = useState<{ isSticky: boolean; offset: number }>({
     isSticky: false,
@@ -31,6 +33,10 @@ const PageHeader: FC = () => {
       window.removeEventListener('scroll', handleScrollEvent);
     };
   }, []);
+
+  useEffect(() => {
+    document.body.setAttribute('data-theme', theme);
+  }, [theme]);
 
   return (
     <header

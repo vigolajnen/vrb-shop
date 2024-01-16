@@ -5,12 +5,19 @@ import TariffItem from '../tariff-item/TariffItem';
 import styles from './styles.module.scss';
 
 const TariffsList: FC<any> = ({ data }) => {
-  console.log('list', data);
+  let list: any = [];
+  if (data.length === 1) {
+    list = data[0].data;
+  } else {
+    list = data.data;
+  }
+
   return (
     <div className={styles.list}>
-      {data.map((el: any, index: number) => (
-        <TariffItem data={el} key={index} />
-      ))}
+      {list &&
+        list.map((el: any, index: number) => (
+          <TariffItem data={el} key={index} />
+        ))}
     </div>
   );
 };

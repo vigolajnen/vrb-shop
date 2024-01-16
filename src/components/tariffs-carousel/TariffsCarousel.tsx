@@ -9,8 +9,13 @@ import Scroll from '../../images/icons/icon-touch.svg?react';
 import styles from './styles.module.scss';
 
 const TariffsCarousel: FC<any> = ({ data }) => {
-  const list = data;
-  // console.log('list', list);
+  let list: any = [];
+  if (data.length === 1) {
+    list = data[0].data;
+  } else {
+    list = data.data;
+  }
+
   const carouselProps = {
     slidesPerView: 3,
     spaceBetween: 3,
@@ -29,7 +34,7 @@ const TariffsCarousel: FC<any> = ({ data }) => {
       spaceBetween: 20,
     },
     768: {
-      slidesPerView: 2,
+      slidesPerView: 2.3,
       spaceBetween: 20,
     },
     960: {
@@ -49,11 +54,12 @@ const TariffsCarousel: FC<any> = ({ data }) => {
         breakpoints={breakpoints}
         {...carouselProps}
       >
-        {list?.map((el: any, index: number) => (
-          <SwiperSlide key={index} className="flex flex-col h-auto">
-            <TariffItem data={el} />
-          </SwiperSlide>
-        ))}
+        {list &&
+          list?.map((el: any, index: number) => (
+            <SwiperSlide key={index} className="flex flex-col h-auto">
+              <TariffItem data={el} />
+            </SwiperSlide>
+          ))}
       </Carousel>
     </>
   );

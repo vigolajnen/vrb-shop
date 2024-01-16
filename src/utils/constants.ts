@@ -7,3 +7,6 @@ export let BASE_URL_PROD_URL: string = import.meta.env.REACT_APP_PROD_URL;
 if (import.meta.env.REACT_APP_VERSION === 'prod') {
   BASE_URL = BASE_URL_PROD_URL;
 }
+if (import.meta.env.REACT_APP_VERSION === 'github') {
+  BASE_NAME = '/vrb-shop/';
+}

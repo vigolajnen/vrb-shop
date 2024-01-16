@@ -7,7 +7,7 @@
   align-items: center;
   margin: 0 auto;
   width: 100%;
-  color: $white-color;
+  color: $white;
   transform-style: inherit;
   overflow: hidden;
 
@@ -171,7 +171,7 @@
   font-weight: 700;
   line-height: normal;
   letter-spacing: 0;
-  color: $white-color;
+  color: $white;
   text-transform: uppercase;
 
   @media (min-width: $sm) {
@@ -233,12 +233,11 @@
 .title {
   width: 100%;
   max-width: 600px;
-  // margin-bottom: 15px;
   font-weight: 700;
   font-size: 18px;
   line-height: 130%;
   text-transform: uppercase;
-  color: $primary-color;
+  color: $seagull;
 
   @media (min-width: $sm) {
     line-height: 140%;
@@ -277,9 +276,19 @@
   }
 }
 
+.priceCount {
+  font-size: 2rem;
+  line-height: normal;
+
+  @media (min-width: $sm) {
+    font-size: 2.7rem;
+  }
+}
+
 .text {
-  max-width: 100%;
-  margin: 10px 0;
+  width: 100%;
+  max-width: 400px;
+  margin: 10px auto;
   font-weight: 700;
   font-size: 30px;
   line-height: normal;
@@ -287,12 +296,15 @@
 
   @media (min-width: $xs) {
     font-size: 25px;
+    margin: 10px 0;
   }
   @media (min-width: $sm) {
     font-size: 67px;
+    max-width: 600px;
   }
   @media (min-width: $xl) {
     font-size: 67px;
+    max-width: 700px;
   }
   @media (min-width: $xxl) {
     font-size: 70px;

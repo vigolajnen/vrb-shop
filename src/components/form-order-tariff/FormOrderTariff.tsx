@@ -2,35 +2,48 @@ import { FC } from 'react';
 import { useParams } from 'react-router';
 
 import FormStep from './FormStep';
+import { getTariffData } from '../../utils/tariffs';
+import { useTypedSelector } from '../../hooks/useTypedSelector';
 
 const FormOrderTariff: FC = () => {
   const id = useParams();
-  const tariffData = [
+
+  const {
+    clubsPoolYes,
+    clubsPoolNo,
+    clubsPremiere,
+    tariffTypes,
+    tariffsTabs,
+    tariffsActiveTab,
+  } = useTypedSelector(state => state.price);
+
+  const dataList = [
     {
-      id: 1,
-      price: 2000,
-      type: 'full',
-      isPool: true,
-      clubs: [{ address: '1' }],
+      tab: tariffsTabs[0],
+      list: clubsPremiere,
     },
     {
-      id: 2,
-      price: 1000,
-      type: 'morning',
-      isPool: true,
-      clubs: [{ address: '1' }],
+      tab: tariffsTabs[1],
+      list: clubsPoolYes,
     },
     {
-      id: 3,
-      price: 1000,
-      type: 'mc_full',
-      isPool: true,
-      clubs: [{ address: '1' }],
+      tab: tariffsTabs[2],
+      list: clubsPoolNo,
     },
   ];
-  const item = () => tariffData?.find((item: any) => item.id === Number(id.id));
 
-  return <FormStep item={item()} />;
+  const filterDataList = dataList.filter(el => el.tab === tariffsActiveTab);
+  const data = filterDataList[0].list;
+
+  const tariffData: any = [];
+  data.length > 0 ? tariffData.push(getTariffData(data, tariffTypes)) : null;
+
+  const item = tariffData
+    .flat(1)
+    ?.find((item: any) => item.id === Number(id.id));
+
+  // console.log('item', item);
+  return <FormStep item={item} />;
 };
 
 export default FormOrderTariff;

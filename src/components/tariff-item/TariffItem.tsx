@@ -2,7 +2,9 @@ import { FC } from 'react';
 import { Link } from 'react-router-dom';
 import { useLocation } from 'react-router';
 import cn from 'classnames';
+import { ErrorBoundary } from 'react-error-boundary';
 
+import ErrorsFallback from '../errors-fallback/ErrorsFallback';
 import TariffItemHeader from '../tariff-item-header/TariffItemHeader';
 import TariffItemClubsList from '../tariff-item-clubs-list/TariffItemClubsList';
 import TariffItemServicesList from '../tariff-item-services-list/TariffItemServicesList';
@@ -13,9 +15,6 @@ import { useModal } from '../../hooks/useModal';
 
 import styles from './styles.module.scss';
 import { formatPrice } from '../../utils';
-
-// type - утро / весь день / мультикарта
-// isPool - с бассейном / без бассейна
 
 const TariffItem: FC<any> = ({ data }) => {
   const { type, price, isPool, clubs } = data;
@@ -98,15 +97,20 @@ const TariffItem: FC<any> = ({ data }) => {
         {stateData.map(el => {
           if (el.url === url) {
             return (
-              <Link
-                key={el?.url}
-                to={`${data?.id}`}
-                onClick={openModal}
-                state={el.state}
-                className={styles.link}
-              >
-                Оформить
-              </Link>
+              <ErrorBoundary key={el?.url} FallbackComponent={ErrorsFallback}>
+                <Link
+                  to={`${data?.id}`}
+                  onClick={openModal}
+                  state={el.state}
+                  className={cn(
+                    'linkReset rounded-pill click_buy_prices ',
+                    styles.link,
+                  )}
+                  data-outline={type === 'full' ? true : false}
+                >
+                  Оформить
+                </Link>
+              </ErrorBoundary>
             );
           } else null;
         })}
@@ -114,6 +118,7 @@ const TariffItem: FC<any> = ({ data }) => {
         <TariffItemServicesList
           title="Что входит в абонемент:"
           isPool={isPool}
+          type={type}
         />
       </div>
     </section>

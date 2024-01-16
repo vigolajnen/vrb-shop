@@ -1,4 +1,4 @@
-import { FC } from 'react';
+import { FC, useContext } from 'react';
 import Container from 'react-bootstrap/esm/Container';
 
 import SectionTitlePic from '../UI/section-title-pic/SectionTitlePic';
@@ -13,8 +13,11 @@ import TitlePicSm from '../../assets/images/advantages/title2.webp';
 import TitlePicXs from '../../assets/images/advantages/title3.webp';
 
 import styles from './styles.module.scss';
+import { CityContext } from '../../context/CityContext';
+import { ROUTERS } from '../../utils/routes';
 
 const AppBenefit: FC = () => {
+  const pageCity = useContext(CityContext);
   const data = [
     {
       icon: <IconMuscle width={50} height={50} />,
@@ -30,6 +33,18 @@ const AppBenefit: FC = () => {
       icon: <IconShield width={50} height={50} />,
       title: 'Безопасный фитнес',
       text: 'Трехступенчатая система очистки воды в бассейне современными фильтрами',
+    },
+  ];
+  const dataSpb = [
+    {
+      icon: <IconMuscle width={50} height={50} />,
+      title: 'Индивидуальный подход тренеров',
+      text: 'Команда профессионалов с большим опытом работы',
+    },
+    {
+      icon: <IconShield width={50} height={50} />,
+      title: 'Комплексный абонемент',
+      text: 'В абонемент включено посещение тренажерного зала, кардиозоны, залов групповых программ и разнообразных спа',
     },
   ];
   const dataTitle = [
@@ -51,7 +66,9 @@ const AppBenefit: FC = () => {
     <section className={styles.benefit}>
       <Container className={styles.container}>
         <SectionTitlePic title="Ваш комфорт" data={dataTitle} img={dataImg} />
-        <SectionListIconText data={data} />
+        <SectionListIconText
+          data={pageCity === ROUTERS.spb.name ? dataSpb : data}
+        />
       </Container>
     </section>
   );

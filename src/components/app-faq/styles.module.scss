@@ -4,12 +4,12 @@
   z-index: 2;
   overflow: hidden;
   position: relative;
+  margin-top: 2.5rem;
   margin-bottom: 0;
   padding-bottom: calc(115px - 27px);
-  color: $white-color;
   transform: translateY(0%);
-
-  margin-top: 2.5rem;
+  background-color: themeColor(bgFaq);
+  color: themeColor(colorFaq);
 
   @media (min-width: $md) {
     margin-top: 5rem;
@@ -70,7 +70,7 @@
   font-weight: $bold-font-weight;
   text-align: center;
   text-transform: uppercase;
-  color: $white-color;
+  color: themeColor(colorFaq);
 
   @media (min-width: $sm) {
     font-size: 57px;
@@ -149,11 +149,11 @@
   margin-right: auto;
   width: 100%;
   max-width: 624px;
-  border-top: 1px solid $white-color;
+  border-top: 1px solid themeColor(colorFaq);
   font-weight: 400;
   font-size: 15px;
   line-height: 130%;
-  color: $white-color;
+  color: themeColor(colorFaq);
 
   @media (min-width: $md) {
     margin-right: auto;
@@ -162,11 +162,17 @@
 }
 
 .item {
+  font-size: 0.9rem !important;
   color: inherit !important;
   background-color: transparent !important;
   border: none !important;
   border-radius: 0 !important;
-  border-bottom: 1px solid white !important;
+  border-bottom: 1px solid themeColor(colorFaq) !important;
+
+  & p,
+  & ul {
+    margin-bottom: 0.5rem;
+  }
 }
 .itemHeader {
   & button {
@@ -177,7 +183,7 @@
     transition: 0.3s;
 
     &::after {
-      color: white !important;
+      color: themeColor(colorFaq) !important;
       background-image: url('../../images/icons/plus.svg') !important;
       transition: 0.3s;
     }
@@ -195,4 +201,25 @@
 }
 .itemBody {
   background: transparent;
+}
+
+[data-theme='light-theme'] {
+  .faq {
+    margin-top: 0;
+    padding-bottom: 0;
+    &:before {
+      display: none;
+      background: none;
+    }
+  }
+  .bg {
+    display: none;
+  }
+
+  .wrapper {
+    min-height: auto;
+  }
+  .list {
+    max-width: 100%;
+  }
 }

@@ -3,14 +3,14 @@
 .header {
   position: relative;
   margin-bottom: auto;
-  background-color: $dark-color;
-  color: $white-color;
+  background-color: $black;
+  color: $white;
   transition: 0.3s;
-}
 
-.button {
-  background: $bg-gradient;
-  border-radius: 20px !important;
+  & .container {
+    max-width: 1440px;
+    width: 100%;
+  }
 }
 
 .menuItem {
@@ -18,10 +18,10 @@
 
   & a {
     display: block;
-    padding: 0.5rem 0.75rem !important;
+    padding: 0.25rem 0.75rem !important;
     width: 100%;
     font-size: 1rem;
-    color: $dark-color;
+    color: $black;
     text-decoration: none;
     box-sizing: border-box;
 
@@ -33,10 +33,102 @@
 }
 
 .logo {
-  width: 120px;
+  width: 100px;
   height: auto;
+  color: $white;
+
+  @media (min-width: 425px) {
+    width: 120px;
+  }
 
   @media (min-width: $sm) {
     width: 160px;
+  }
+}
+
+.button {
+  z-index: 0;
+  position: relative;
+  $size: 2px;
+  margin: 2%;
+  padding: 0.75rem !important;
+  color: $white;
+  background: themeColor(bgGradient);
+
+  font-size: 0.8rem !important;
+  font-weight: $bold-font-weight;
+  text-align: center;
+
+  @media (min-width: 400px) {
+    font-size: 1rem !important;
+  }
+  @media (min-width: $sm) {
+    font-size: 1rem !important;
+    padding: 0.75rem 1.6rem !important;
+  }
+
+  &::before {
+    z-index: -1;
+    content: '';
+    position: absolute;
+    top: $size;
+    left: $size;
+    width: calc(100% - $size * 2);
+    height: calc(100% - $size * 2);
+    border-radius: inherit;
+    background: transparent;
+  }
+
+  &:active,
+  &:hover {
+    color: inherit;
+
+    &::before {
+      background: themeColor(bgTariff);
+    }
+  }
+
+  &[data-outline='false'] {
+    background: themeColor(bgGradient);
+
+    &::before {
+      background: themeColor(bgTariff);
+    }
+
+    &:active,
+    &:hover {
+      background: themeColor(bgTariff);
+
+      &::before {
+        background: themeColor(bgGradient);
+      }
+    }
+  }
+
+  &:disabled {
+    opacity: 0.5;
+  }
+}
+
+[data-theme='light-theme'] {
+  & .header {
+    background-color: $white;
+    color: $black;
+    box-shadow: $box-shadow-dark;
+  }
+
+  & .logo {
+    color: $black;
+
+    & svg {
+      fill: currentColor;
+    }
+  }
+
+  & .button {
+    color: $black;
+    background: transparent;
+    border: none;
+    text-transform: uppercase;
   }
 }

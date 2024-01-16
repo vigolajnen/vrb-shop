@@ -7,9 +7,10 @@
   align-items: center;
   padding: 0.5rem 0.75rem;
   margin-bottom: 0.5rem;
+  background: themeColor(bgTariffHeader);
   border-radius: 30px;
-  border: 2px solid #6ddcff;
-  color: #7f60f9;
+  border: 2px solid themeColor(borderTariffHeader);
+  color: themeColor(colorTariffHeader);
   font-size: 0.8rem;
 
   @media (min-width: 380px) {
@@ -38,20 +39,48 @@
 
 .info {
   width: calc(100% - 26px - 10px);
-  color: #ffffff;
+  color: themeColor(textTariffHeader);
+
+  @media (min-width: 400px) {
+    width: calc(100% - 36px - 20px);
+    font-size: 1.2rem;
+    line-height: 1.8rem;
+  }
 
   @media (min-width: $sm) {
     width: calc(100% - 36px - 15px);
+    font-size: 1rem;
+  }
+  @media (min-width: $md) {
+    line-height: normal;
+  }
+  @media (min-width: $xxl) {
+    font-size: 1.2rem;
+    line-height: 1.8rem;
+    line-height: normal;
   }
 }
 
 .infoUppercase {
   width: 100%;
-  color: #ffffff;
+  color: themeColor(textTariffHeader);
   text-transform: uppercase;
   font-size: 0.7rem;
+  line-height: normal;
+
+  @media (min-width: 400px) {
+    font-size: 0.9rem;
+  }
 
   @media (min-width: $xs) {
     font-size: 0.8rem;
+  }
+
+  @media (min-width: $md) {
+    line-height: 1.3rem;
+  }
+
+  @media (min-width: $xl) {
+    line-height: 1.6rem;
   }
 }

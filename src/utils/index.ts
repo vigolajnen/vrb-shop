@@ -22,3 +22,13 @@ function getCitiesRouters(arr: [string, Route][]): Route[] {
 }
 
 export const CITIES_ROUTERS: Route[] = getCitiesRouters(ARR_ROUTERS_SORT);
+
+export const handleClickScrollToId = (
+  e: React.MouseEvent<HTMLAnchorElement>,
+) => {
+  const position = e.currentTarget?.href.indexOf('#');
+  const el = e.currentTarget?.href.slice(position + 1);
+  document
+    .querySelector(`[id="${el}"]`)
+    ?.scrollIntoView({ behavior: 'smooth' });
+};

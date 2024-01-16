@@ -3,15 +3,16 @@
 .footer {
   position: relative;
   margin-top: auto;
-  background-color: $dark-color;
-  opacity: 0.75;
+  background-color: themeColor(bgFooter);
+  color: themeColor(colorFooter);
+  opacity: themeColor(bgFooterOpacity);
 }
 
 .link {
-  color: $white-color;
+  color: themeColor(colorFooterLink);
 
   &:focus,
   &:hover {
-    color: $secondary-color;
+    color: themeColor(colorFooterLinkHover);
   }
 }

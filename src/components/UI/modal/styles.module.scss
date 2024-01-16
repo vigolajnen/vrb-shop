@@ -7,27 +7,27 @@
 .header {
   border: none;
   text-align: center;
+  padding-top: 2rem;
 }
 
 .close {
   position: absolute;
-  right: 0.5rem;
-  top: 0.5rem;
+  right: 0.75rem;
+  top: 0.75rem;
 
   @media (min-width: $sm) {
-    right: 0;
-    top: 0;
+    right: -30px;
+    top: -10px;
   }
 }
 
 .title {
   margin: 0 auto;
   padding: 0 0.5rem;
-  font-family: $main-font-bold;
   font-weight: $bold-font-weight;
   font-style: normal;
   font-size: 23px;
-  line-height: 38px;
+  line-height: normal;
   text-align: center;
   letter-spacing: -0.02em;
   color: #101828;
@@ -35,11 +35,9 @@
 
   @media (min-width: $xs) {
     font-size: 28px;
-    line-height: 38px;
   }
 
-  @media (min-width: $sm) {
+  @media (min-width: $md) {
     font-size: 36px;
-    line-height: 44px;
   }
 }

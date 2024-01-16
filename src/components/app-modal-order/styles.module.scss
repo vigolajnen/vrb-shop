@@ -6,6 +6,9 @@
   @media (min-width: $sm) {
     padding: 3vw 5vw;
   }
+  @media (min-width: $xxl) {
+    padding: 3vw;
+  }
 
   & > div {
     border: none;

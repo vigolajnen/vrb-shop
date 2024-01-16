@@ -20,8 +20,14 @@ body {
   font-weight: $medium-font-weight;
   font-size: $main-font-size;
   line-height: $main-line-height;
-  background-color: $bg-color;
-  color: white;
+  background-color: $black;
+  color: $white;
+  overflow-x: hidden;
+
+  &[data-theme='light-theme'] {
+    color: $black;
+    background-color: $white;
+  }
 }
 
 #root {
@@ -30,6 +36,13 @@ body {
   padding: 0;
   min-height: 100vh;
   background: $bg-image-gradient;
+}
+
+[data-theme='light-theme'] {
+  & #root {
+    color: $black;
+    background: $white;
+  }
 }
 
 img {
@@ -63,6 +76,38 @@ button[type='submit'] {
   overflow: hidden;
 }
 
+.modal-dialog {
+  max-width: 700px;
+}
+
+.btnReset {
+  display: inline-block;
+  background-color: transparent;
+  border: none;
+  outline: none;
+  cursor: pointer;
+
+  font-size: inherit;
+  font-size: 1rem;
+  font-weight: $bold-font-weight;
+  line-height: normal;
+
+  padding: 0;
+  margin: 0;
+
+  transition: $transition-base;
+}
+
+.linkReset {
+  display: inline-block;
+  text-decoration: none;
+
+  &:focus,
+  &:hover {
+    text-decoration: none;
+  }
+}
+
 @keyframes anim {
   0% {
     transform: translateY(0);
@@ -74,5 +119,68 @@ button[type='submit'] {
 
   100% {
     transform: translateY(0);
+  }
+}
+
+[data-theme='light-theme'] {
+  .btnReset {
+    &:hover {
+      color: #5c636a;
+    }
+  }
+  .swiper-horizontal .swiper-pagination {
+    bottom: 5px;
+  }
+
+  .swiper-pagination-bullet {
+    width: 25px;
+    height: 5px;
+    border-radius: 3px;
+    border: none;
+    background: $white;
+    opacity: 1;
+  }
+
+  .swiper-pagination-bullet-active {
+    background: $paris-daisy;
+  }
+
+  .swiper-button-prev,
+  .swiper-button-next {
+    display: none;
+    width: 3rem;
+    height: 3rem;
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: $black;
+    background-color: $white;
+    border-radius: 50%;
+  }
+
+  .swiper-button-prev:after,
+  .swiper-button-next:after {
+    font-size: inherit;
+  }
+
+  .swiper-button-prev:hover,
+  .swiper-button-next:hover {
+    color: $white;
+    background-color: $paris-daisy;
+  }
+
+  @media (min-width: 640px) {
+    .swiper-button-prev,
+    .swiper-button-next {
+      display: flex;
+    }
+
+    .swiper-horizontal .swiper-pagination {
+      bottom: 30px;
+    }
+
+    .swiper-pagination-bullet {
+      width: 50px;
+      height: 5px;
+    }
   }
 }

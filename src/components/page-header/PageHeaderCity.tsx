@@ -2,6 +2,8 @@ import { FC, useEffect, useState } from 'react';
 import { useLocation } from 'react-router';
 import { NavLink } from 'react-router-dom';
 import Dropdown from 'react-bootstrap/Dropdown';
+import { motion } from 'framer-motion';
+import cn from 'classnames';
 
 import { CITIES_ROUTERS } from '../../utils';
 import PageHeaderCitySelection from '../page-header-city-selection/PageHeaderCitySelection';
@@ -14,6 +16,12 @@ export interface ICity {
 }
 
 const PageHeaderCity: FC = () => {
+  const visible = { opacity: 1, y: 0, transition: { duration: 0.5 } };
+
+  const itemVariants = {
+    hidden: { opacity: 0, y: 10 },
+    visible,
+  };
   const localStorageCity: string | null = localStorage.getItem('city');
   const location = useLocation();
   const [isOpen, setIsOpen] = useState(false);
@@ -44,16 +52,11 @@ const PageHeaderCity: FC = () => {
         }}
       />
       <Dropdown>
-        {/* <Button
-          title={nameCity}
-          style="dropdown-toggle"
-          onClick={() => setIsOpen(prev => !prev)}
-        /> */}
         <Dropdown.Toggle
           id="example1"
           variant="secondary"
           onClick={() => setIsOpen(prev => !prev)}
-          className={styles.button}
+          className={cn('btnReset rounded-pill', styles.button)}
         >
           {nameCity}
         </Dropdown.Toggle>
@@ -62,11 +65,15 @@ const PageHeaderCity: FC = () => {
           <ul>
             {CITIES_ROUTERS.length > 0 &&
               [...CITIES_ROUTERS].map((city, index) => (
-                <li key={index} className={styles.menuItem}>
+                <motion.li
+                  variants={itemVariants}
+                  key={index}
+                  className={styles.menuItem}
+                >
                   <NavLink to={city.url} onClick={onClickPoint}>
                     {city.name}
                   </NavLink>
-                </li>
+                </motion.li>
               ))}
           </ul>
         </Dropdown.Menu>

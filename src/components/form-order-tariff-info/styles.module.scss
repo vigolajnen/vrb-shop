@@ -1,0 +1,25 @@
+@import '../../styles-global/variables.scss';
+
+.list {
+  padding: 1rem;
+  margin-bottom: 1rem;
+  background-color: #dee2e6;
+  border-radius: 20px;
+}
+
+.item {
+  padding: 1rem 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.text {
+  font-size: 1rem;
+  text-align: center;
+}
+
+.price {
+  min-width: 70px;
+  text-align: right;
+}

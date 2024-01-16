@@ -9,7 +9,7 @@
   background-color: #fff;
   border-radius: 10px;
   padding: 0.7rem 1rem;
-  color: $dark-color;
+  color: $black;
   font-weight: bold;
   text-align: center;
   font-size: 0.7rem;
@@ -50,8 +50,8 @@
   text-transform: uppercase;
   border-radius: 10px;
   background: transparent;
-  color: $dark-color;
-  border: 2px solid $dark-color;
+  color: $black;
+  border: 2px solid $black;
 
   @media (min-width: $sm) {
     padding: 1rem;
@@ -61,13 +61,13 @@
   &:focus,
   &:hover {
     color: #ffffff;
-    background: $bg-gradient;
+    background: themeColor(bgGradient);
     border: 2px solid #ffffff;
   }
 }
 
 .active {
   color: #ffffff;
-  background: $bg-gradient;
+  background: themeColor(bgGradient);
   border: 2px solid #ffffff;
 }

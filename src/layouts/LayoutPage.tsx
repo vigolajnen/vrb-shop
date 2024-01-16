@@ -2,6 +2,8 @@ import { Suspense } from 'react';
 import { Outlet } from 'react-router';
 import { motion } from 'framer-motion';
 
+import { ThemeContext } from '../context/ThemeContext';
+
 import PageHeader from '../components/page-header/PageHeader';
 import PageBody from '../components/page-body/PageBody';
 import SpinnerBig from '../components/UI/spinner-big/SpinnerBig';
@@ -10,19 +12,23 @@ import PageFooter from '../components/page-footer/PageFooter';
 export default function LayoutPage() {
   return (
     <>
-      <motion.div
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        exit={{ opacity: 0 }}
+      <motion.article
+        initial="hidden"
+        animate="visible"
+        exit={{ opacity: 0, transition: { duration: 1 } }}
+        variants={{ visible: { transition: { staggerChildren: 0.3 } } }}
       >
-        <PageHeader />
-        <PageBody>
-          <Suspense fallback={<SpinnerBig />}>
-            <Outlet />
-          </Suspense>
-        </PageBody>
-        <PageFooter />
-      </motion.div>
+        {/* light-theme */}
+        <ThemeContext.Provider value="">
+          <PageHeader />
+          <PageBody>
+            <Suspense fallback={<SpinnerBig />}>
+              <Outlet />
+            </Suspense>
+          </PageBody>
+          <PageFooter />
+        </ThemeContext.Provider>
+      </motion.article>
     </>
   );
 }

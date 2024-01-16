@@ -7,7 +7,7 @@
   align-items: center;
   width: 100%;
   min-height: 100vh;
-  background-color: $bg-gradient;
+  background-color: themeColor(bgGradient);
 }
 
 .container {

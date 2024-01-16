@@ -6,12 +6,13 @@
   display: flex;
   flex-direction: column;
   padding: 2px;
-  max-width: 395px;
+  max-width: 360px;
   height: 100%;
-  background: $bg-product;
-  border-radius: 6px;
+
+  background: themeColor(bgTariff);
+  border-radius: themeColor(borderRadiusTariff);
   transition: $transition-base;
-  color: $white-color;
+  color: themeColor(textTariff);
   font-size: 16px;
 
   @media (min-width: $sm) {
@@ -30,7 +31,7 @@
   }
 
   &:hover {
-    background: $bg-gradient-radial;
+    background: themeColor(bgGradientRadial);
     transition: $transition-base;
     animation: rotate-position 6s infinite linear;
 
@@ -40,17 +41,19 @@
 
     & .button {
       & span {
-        background: $bg-gradient;
+        color: themeColor(textTariffBtn);
+        background: themeColor(bgGradient);
       }
     }
   }
 }
 
 .active {
-  background: $bg-gradient;
+  // background: themeColor(bgGradient);
+  background: themeColor(bgTariffActive);
 
   &:hover {
-    background: $bg-gradient-radial;
+    background: themeColor(bgGradientRadial);
   }
 }
 
@@ -60,8 +63,8 @@
   gap: 10px;
   height: 100%;
   padding: 30px 20px;
-  border-radius: 6px;
-  background-color: $bg-product;
+  border-radius: themeColor(borderRadiusTariff);
+  background: themeColor(bgTariff);
 
   @media (min-width: $xs) {
     padding: 24px 20px;
@@ -77,6 +80,7 @@
 }
 
 .title {
+  font-weight: $bold-font-weight;
   text-align: center;
   text-transform: uppercase;
 }
@@ -117,66 +121,54 @@
 .link {
   z-index: 0;
   position: relative;
-  display: inline-block;
+  $size: 2px;
+  margin: 2% 0;
+  padding: 1rem 1.6rem;
+  color: $white;
+  background: themeColor(bgGradient);
 
-  padding: 1rem;
-  margin: 2%;
-  font-weight: 700;
-  font-size: 20px;
-  line-height: 24px;
+  font-size: 1.2rem;
+  font-weight: $bold-font-weight;
   text-align: center;
-  background: $bg-gradient;
-  color: $white-color;
-  transition: $transition-base;
-  border-radius: $border-radius;
-  text-decoration: none;
   text-transform: lowercase;
-  outline: none;
-  cursor: pointer;
 
   &::before {
-    content: '';
     z-index: -1;
+    content: '';
     position: absolute;
-    top: 2px;
-    left: 2px;
-    width: calc(100% - 4px);
-    height: calc(100% - 4px);
-    border-radius: $border-radius;
-    background: $bg-product;
+    top: $size;
+    left: $size;
+    width: calc(100% - $size * 2);
+    height: calc(100% - $size * 2);
+    border-radius: inherit;
     background: transparent;
   }
 
-  &:focus,
   &:active,
   &:hover {
-    transition: $transition-base;
+    color: inherit;
 
     &::before {
-      background: $bg-product;
+      background: themeColor(bgTariff);
     }
   }
 
-  &:disabled {
-    opacity: 0.5;
-  }
-}
+  &[data-outline='false'] {
+    color: themeColor(textTariffBtn);
+    background: themeColor(bgGradient);
 
-.linkOutline {
-  & span {
-    display: flex;
-    padding: 15px 76px;
-    border-radius: $border-radius;
-    background: $bg-product;
-  }
+    &::before {
+      background: themeColor(bgTariff);
+    }
 
-  &:focus,
-  &:active,
-  &:hover {
-    transition: $transition-base;
+    &:active,
+    &:hover {
+      color: $white;
+      background: themeColor(bgTariff);
 
-    & span {
-      background: $bg-gradient;
+      &::before {
+        background: themeColor(bgGradient);
+      }
     }
   }
 }

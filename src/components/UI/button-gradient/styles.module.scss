@@ -1,0 +1,62 @@
+@import '../../../styles-global/variables.scss';
+
+.button {
+  z-index: 0;
+  position: relative;
+  max-width: 100%;
+  $size: 2px;
+  margin: 2% 0;
+  padding: 1rem 1.3rem;
+  color: $white;
+  background: themeColor(bgGradient);
+
+  font-size: 1.2rem;
+  font-weight: $bold-font-weight;
+  text-align: center;
+  // text-transform: lowercase;
+
+  &::before {
+    z-index: -1;
+    content: '';
+    position: absolute;
+    top: $size;
+    left: $size;
+    width: calc(100% - $size * 2);
+    height: calc(100% - $size * 2);
+    border-radius: inherit;
+    background: transparent;
+  }
+
+  &:active,
+  &:hover {
+    color: $white;
+
+    &::before {
+      background: themeColor(bgTariff);
+    }
+  }
+
+  &[data-outline='false'] {
+    background: themeColor(bgGradient);
+
+    &::before {
+      background: themeColor(bgTariff);
+    }
+
+    &:active,
+    &:hover {
+      color: inherit;
+      background: themeColor(bgTariff);
+
+      &::before {
+        background: themeColor(bgGradient);
+      }
+    }
+  }
+
+  &:disabled {
+    color: $white;
+    opacity: 0.5;
+    cursor: default;
+  }
+}

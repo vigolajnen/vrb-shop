@@ -3,6 +3,8 @@
 .gallery {
   margin-top: 5rem;
   margin-bottom: 2.5rem;
+  background-color: themeColor(bgGallery);
+  color: themeColor(colorGallery);
 
   @media (min-width: $md) {
     margin-top: 5rem;
@@ -12,11 +14,14 @@
 
 .title {
   padding: 0 1rem;
-  font-size: 35px;
+  font-size: 26px;
   font-weight: $bold-font-weight;
   text-transform: uppercase;
   text-align: center;
 
+  @media (min-width: $xxs) {
+    font-size: 35px;
+  }
   @media (min-width: $sm) {
     font-size: 57px;
   }
@@ -43,7 +48,7 @@
     font-size: 20px;
   }
   & span {
-    color: $secondary-color;
+    color: $seagull;
   }
 
   & small {
@@ -75,6 +80,37 @@
 
     &:not(:nth-child(2n)) .text {
       margin-left: 160px;
+    }
+  }
+}
+
+[data-theme='light-theme'] {
+  .gallery {
+    padding-top: 2rem;
+    padding-bottom: 3rem;
+    margin-bottom: 0;
+
+    @media (min-width: $md) {
+      padding-top: 5rem;
+    }
+  }
+
+  .item {
+    & .text {
+      padding: 0 1rem;
+
+      @media (min-width: $md) {
+        padding: 1rem 0;
+      }
+    }
+    @media (min-width: $md) {
+      &:nth-child(2n) {
+        padding-left: 0;
+      }
+
+      &:not(:nth-child(2n)) .text {
+        margin-left: 0;
+      }
     }
   }
 }

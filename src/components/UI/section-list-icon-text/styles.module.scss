@@ -21,7 +21,7 @@
   gap: 20px;
   padding: 15px;
   margin-right: auto;
-  border: 1px solid $secondary-color;
+  border: 1px solid themeColor(borderSectionListIconText);
   border-radius: 10px;
 }
 
@@ -31,6 +31,7 @@
   align-items: center;
   width: 50px;
   height: 50px;
+  color: themeColor(textSectionListIconText);
 
   @media (min-width: $xs) {
     width: 70px;
@@ -58,7 +59,7 @@
   font-weight: 700;
   font-size: 18px;
   line-height: 130%;
-  color: $primary-color;
+  color: themeColor(titleSectionListIconText);
   text-transform: uppercase;
 
   @media (min-width: $sm) {
@@ -70,9 +71,12 @@
   font-weight: 400;
   font-size: 16px;
   line-height: 130%;
-  color: $white-color;
+  color: themeColor(textSectionListIconText);
 
   @media (min-width: $sm) {
-    font-size: 20px;
+    font-size: 1rem;
+  }
+  @media (min-width: $xl) {
+    font-size: 1.2rem;
   }
 }

@@ -24,39 +24,6 @@
   padding: 0;
 }
 
-@mixin beforeBgElement($zIndex, $top, $right, $bottom, $left) {
-  &::before {
-    z-index: $zIndex;
-    position: absolute;
-    content: '';
-    top: $top;
-    bottom: $bottom;
-    left: $left;
-    right: $right;
-    width: 494px;
-    height: 494px;
-    max-width: 100%;
-    background-image: $bg-gradient-radial;
-    filter: blur(162px);
-  }
-}
-@mixin afterBgElement($zIndex, $top, $right, $bottom, $left) {
-  &::after {
-    z-index: $zIndex;
-    position: absolute;
-    content: '';
-    top: $top;
-    bottom: $bottom;
-    left: $left;
-    right: $right;
-    width: 494px;
-    height: 494px;
-    max-width: 100%;
-    background-image: $bg-gradient-radial;
-    filter: blur(162px);
-  }
-}
-
 // адаптивные шрифты
 
 @function strip-unit($number) {

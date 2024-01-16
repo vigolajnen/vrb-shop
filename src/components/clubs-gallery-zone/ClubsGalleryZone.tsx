@@ -1,19 +1,24 @@
-import { FC } from 'react';
-import { Scrollbar } from 'swiper/modules';
+import { FC, useContext } from 'react';
+import { Scrollbar, Navigation } from 'swiper/modules';
 import { SwiperSlide } from 'swiper/react';
 import cn from 'classnames';
+import { useMediaQuery } from 'usehooks-ts';
 
 import IconTouch from '../../images/icons/icon-touch.svg?react';
 import Carousel from '../UI/carousel/Carousel';
 
 import 'swiper/css/scrollbar';
+import 'swiper/css/navigation';
+
 import styles from './styles.module.scss';
+import { ThemeContext } from '../../context/ThemeContext';
 
 interface IClubsGalleryZone {
   zone: string;
   data: string[];
   children?: React.ReactNode;
   style?: string;
+  id?: string;
 }
 
 const ClubsGalleryZone: FC<IClubsGalleryZone> = ({
@@ -21,7 +26,13 @@ const ClubsGalleryZone: FC<IClubsGalleryZone> = ({
   data,
   children,
   style,
+  id,
 }) => {
+  const theme = useContext(ThemeContext);
+  const themeLight = 'light-theme';
+  const matches = useMediaQuery('(min-width: 1024px)');
+  const matchesMob = useMediaQuery('(min-width: 567px)');
+
   const breakpoints = {
     320: {
       slidesPerView: 1.2,
@@ -48,14 +59,24 @@ const ClubsGalleryZone: FC<IClubsGalleryZone> = ({
       draggable: true,
       hide: true,
     },
-    modules: [Scrollbar],
+    navigation: theme === themeLight ? true : false,
+    modules: theme === themeLight ? [Scrollbar, Navigation] : [Scrollbar],
   };
+
   return (
-    <div className={style}>
+    <div className={style} id={id}>
       <div className={styles.header}>
         {children}
         <div data-zone={zone} className={styles.zone}>
-          <IconTouch width={16} height={16} className={styles.icon} />
+          {matches ? (
+            Boolean(data) && [...data].length > 3 ? (
+              theme === themeLight && !matchesMob ? (
+                <IconTouch width={16} height={16} className={styles.icon} />
+              ) : null
+            ) : null
+          ) : (
+            <IconTouch width={16} height={16} className={styles.icon} />
+          )}
         </div>
       </div>
       <Carousel

@@ -6,7 +6,7 @@
   justify-content: space-between;
   align-items: center;
   padding-right: 0.5rem;
-  color: $white-color;
+  color: themeColor(colorGallery);
 }
 
 .zone {
@@ -24,7 +24,7 @@
   height: 100%;
   fill: none;
   stroke-width: 1px;
-  stroke: $secondary-color;
+  stroke: $seagull;
 }
 
 .pic {
